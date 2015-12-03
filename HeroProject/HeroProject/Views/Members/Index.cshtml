@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HeroProject.Models.Member>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Friend.MemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message.MessageText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profile.Bio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeroName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateJoined)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastLogin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Friend.MemberID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message.MessageText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profile.Bio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeroName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateJoined)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastLogin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -29,5 +29,17 @@ namespace HeroProject.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Member> Members { get; set; }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Friend> Friends { get; set; }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Message> Messages { get; set; }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Profile> Profiles { get; set; }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Interest> Interests { get; set; }
+
+        public System.Data.Entity.DbSet<HeroProject.Models.Photo> Photos { get; set; }
     }
 }
