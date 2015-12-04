@@ -17,8 +17,7 @@ namespace HeroProject.Controllers
         // GET: Members
         public ActionResult Index()
         {
-            var members = db.Members.Include(m => m.Friend).Include(m => m.Message).Include(m => m.Profile);
-            return View(members.ToList());
+            return View(db.Members.ToList());
         }
 
         // GET: Members/Details/5
@@ -39,9 +38,6 @@ namespace HeroProject.Controllers
         // GET: Members/Create
         public ActionResult Create()
         {
-            ViewBag.MemberID = new SelectList(db.Friends, "MemberID", "MemberID");
-            ViewBag.MessageID = new SelectList(db.Messages, "MessageID", "MessageText");
-            ViewBag.ProfileID = new SelectList(db.Profiles, "ID", "Bio");
             return View();
         }
 
@@ -50,7 +46,7 @@ namespace HeroProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,HeroName,UserName,DateJoined,LastLogin,ProfileID,MemberID,MessageID")] Member member)
+        public ActionResult Create([Bind(Include = "ID,HeroName,UserName,DateJoined,LastLogin")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -59,9 +55,6 @@ namespace HeroProject.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MemberID = new SelectList(db.Friends, "MemberID", "MemberID", member.MemberID);
-            ViewBag.MessageID = new SelectList(db.Messages, "MessageID", "MessageText", member.MessageID);
-            ViewBag.ProfileID = new SelectList(db.Profiles, "ID", "Bio", member.ProfileID);
             return View(member);
         }
 
@@ -77,9 +70,6 @@ namespace HeroProject.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MemberID = new SelectList(db.Friends, "MemberID", "MemberID", member.MemberID);
-            ViewBag.MessageID = new SelectList(db.Messages, "MessageID", "MessageText", member.MessageID);
-            ViewBag.ProfileID = new SelectList(db.Profiles, "ID", "Bio", member.ProfileID);
             return View(member);
         }
 
@@ -88,7 +78,7 @@ namespace HeroProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,HeroName,UserName,DateJoined,LastLogin,ProfileID,MemberID,MessageID")] Member member)
+        public ActionResult Edit([Bind(Include = "ID,HeroName,UserName,DateJoined,LastLogin")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -96,9 +86,6 @@ namespace HeroProject.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MemberID = new SelectList(db.Friends, "MemberID", "MemberID", member.MemberID);
-            ViewBag.MessageID = new SelectList(db.Messages, "MessageID", "MessageText", member.MessageID);
-            ViewBag.ProfileID = new SelectList(db.Profiles, "ID", "Bio", member.ProfileID);
             return View(member);
         }
 

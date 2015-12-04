@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Interests.Name)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Photo.FileLocation)
         </th>
         <th>
@@ -28,9 +25,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Interests.Name)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Photo.FileLocation)
         </td>

@@ -181,10 +181,22 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
-    <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512032240191_InitialCreate.cs" />
+    <Compile Include="Migrations\201512032240191_InitialCreate.Designer.cs">
+      <DependentUpon>201512032240191_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512041605304_ModelProps.cs" />
+    <Compile Include="Migrations\201512041605304_ModelProps.Designer.cs">
+      <DependentUpon>201512041605304_ModelProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512041612229_changes1.cs" />
+    <Compile Include="Migrations\201512041612229_changes1.Designer.cs">
+      <DependentUpon>201512041612229_changes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Demographics.cs" />
     <Compile Include="Models\Friend.cs" />
@@ -207,6 +219,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\HeroProject.pubxml" />
+    <None Include="Properties\PublishProfiles\SuperHeroHub.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -274,6 +288,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512032240191_InitialCreate.resx">
+      <DependentUpon>201512032240191_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512041605304_ModelProps.resx">
+      <DependentUpon>201512041605304_ModelProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512041612229_changes1.resx">
+      <DependentUpon>201512041612229_changes1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

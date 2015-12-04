@@ -12,15 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Friend.MemberID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Message.MessageText)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profile.Bio)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.HeroName)
         </th>
         <th>
@@ -37,15 +28,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Friend.MemberID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Message.MessageText)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile.Bio)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.HeroName)
         </td>
