@@ -139,6 +139,7 @@ namespace HeroProject.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            
             return View();
         }
 
